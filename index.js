@@ -220,9 +220,9 @@ scoreDisplay.innerHTML = score;
 
   // now we check  2048 in the div
   function checkForWin() {
-    for (let i = 0; i < square.length; i++) {
-      if (square[i].innerHTHL == 2048) {
-        resultDisplay.innerHTHL("you win");
+    for (let i = 0; i < squares.length; i++) {
+      if (squares[i].innerHTHL == 2048) {
+        resultDisplay.innerHTHL=("you win");
         document.addEventListener("keyup", control);
       }
     }
@@ -232,13 +232,13 @@ scoreDisplay.innerHTML = score;
 
   function checkForGameOver() {
     let zeros = 0;
-    for (let i = 0; i < square.length; i++) {
-      if (square[i].innerHTHL == 0) {
+    for (let i = 0; i < squares.length; i++) {
+      if (squares[i].innerHTHL == 0) {
         zeros++;
       }
     }
 if (zeros == 0) {
-resultDisplay.innerHTML('youb lose')
+resultDisplay.innerHTML = ('youb lose')
 document.removeEventListener("keyup", control);
 }
 
