@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const block = 4;
   let squares = [];
-let score = 0;
+  let score = 0;
 
   function playingBoard() {
     for (let i = 0; i < block * block; i++) {
@@ -25,7 +25,8 @@ let score = 0;
     let randomNumber = Math.floor(Math.random() * squares.length);
     if (squares[randomNumber].innerHTML == 0) {
       squares[randomNumber].innerHTML = 2;
-      checkForGameOver()
+      checkForGameOver();
+
     } else generate();
   }
 
@@ -106,7 +107,7 @@ let score = 0;
         parseInt(totalFour),
       ];
 
-      let fileredColumn = column.filter((num) => num);
+      let fileredColumn = column.filter(num => num);
       let missing = 4 - fileredColumn.length;
       let zeros = Array(missing).fill(0);
       let newColumn = zeros.concat(fileredColumn);
@@ -152,8 +153,8 @@ let score = 0;
           parseInt(squares[i].innerHTML) + parseInt(squares[i + 1].innerHTML);
         squares[i].innerHTML = combinedTotal;
         squares[i + 1].innerHTML = 0;
-score+=combinedTotal;
-scoreDisplay.innerHTML = score; 
+        score += combinedTotal;
+        scoreDisplay.innerHTML = score;
       }
     }
     checkForWin();
@@ -168,8 +169,8 @@ scoreDisplay.innerHTML = score;
         squares[i].innerHTML = combinedTotal;
         squares[i + block].innerHTML = 0;
 
-        score+=combinedTotal;
-scoreDisplay.innerHTML = score; 
+        score += combinedTotal;
+        scoreDisplay.innerHTML = score;
       }
     }
     checkForWin();
@@ -222,7 +223,7 @@ scoreDisplay.innerHTML = score;
   function checkForWin() {
     for (let i = 0; i < squares.length; i++) {
       if (squares[i].innerHTHL == 2048) {
-        resultDisplay.innerHTHL=("you win");
+        resultDisplay.innerHTHL = ('you win');
         document.addEventListener("keyup", control);
       }
     }
@@ -234,13 +235,12 @@ scoreDisplay.innerHTML = score;
     let zeros = 0;
     for (let i = 0; i < squares.length; i++) {
       if (squares[i].innerHTHL == 0) {
-        zeros++;
+        zeros++
       }
     }
-if (zeros === 0) {
-resultDisplay.innerHTML = ('you lose')
-document.removeEventListener("keyup", control);
-}
-
+    if (zeros ===0) {
+      resultDisplay.innerHTML = ('you lose');
+      document.removeEventListener("keyup", control);
+    }
   }
 });
