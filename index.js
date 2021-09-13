@@ -237,8 +237,8 @@ scoreDisplay.innerHTML = score;
         zeros++;
       }
     }
-if (zeros == 0) {
-resultDisplay.innerHTML = ('youb lose')
+if (zeros === 0) {
+resultDisplay.innerHTML = ('you lose')
 document.removeEventListener("keyup", control);
 }
 
